@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gametest001</title><!--Game Test 01 ------------------------>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@900&display=swap" rel="stylesheet">
+    <style>
+      *{margin:0px;padding:0px;box-sizing:border-box;font-family:microsoft sans serif;font-size:16px;columns: #000;}
+      *:focus{outline:none;}
+      .bodies{height:657px;width:100%;position:relative;}
+      .abs{position:absolute;}
+      .ins{position:relative;}
+      .inr{border:0px solid #f00;position:relative;height:100%;width:100%;}
+      .inr0{border:1px solid #f00;position:relative;height:100%;width:100%;}
+      .border{border:1px solid #000;}
+      
+      .boxes{padding:10px 30px;top:100px;left:100px;}
+      .btns{padding:10px 30px;top:180px;left:40px;border-radius:4px;}
+      .btns:hover{background-color:#999;}
+      .btn02{left:190px;}
+      @media screen and (max-width: 650px) {
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div class = "bodies border">
+      <div class = "inr0">
+        <div class = "box01 boxes abs"></div>
+        <div class = "btn01 btns abs border" onclick = "incre()">Increase</div>
+        <div class = "btn02 btns abs border" onclick = "decre()">Decrese</div>
+      </div>
+    </div>
+    <script>
+      var boxvalue = 100;
+      var mainbody = document.querySelector(".bodies");
+      var boxesx = document.querySelectorAll(".boxes");
+      
+      
+      //var mainbody = document.querySelector(".bodies");
+      //var mainbody = document.querySelectorAll(".bodies");
+      var screenheight = window.screen.height;
+      var screenwidth = window.screen.width;
+      console.log(screenheight,screenwidth);
+      if(screenwidth < 450){
+        mainbody.style.height = screenheight + "px";
+        mainbody.style.width = screenwidth + "px";
+      }
+      valuerefresh();
+      function valuerefresh(){
+        boxesx[0].innerHTML = boxvalue;
+      }
+      function incre(){
+        boxvalue+=10;
+        valuerefresh();
+      }
+      function decre(){
+        boxvalue-=10;
+        valuerefresh();
+      }
+      
+
+
+
+      var charX = 1;
+      function moveChar(){
+        
+      };
+      var loop = setInterval(moveChar,1000/60);
+    </script>
+  </body>
+</html>
